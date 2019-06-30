@@ -44,7 +44,7 @@ public class Student extends Human {
 	@ Override
 	public void  humanInfo(String inf) {
 		super.humanInfo (inf);
-		logger.info("Человек имеет рост - " + growth + " ,вес - " + weight + " и возраст- " + age);
+		logger.info("Man has grown up - " + growth + "\n" + "weight - " + weight + " and age - " + age);
 	}
 
 	@Override
