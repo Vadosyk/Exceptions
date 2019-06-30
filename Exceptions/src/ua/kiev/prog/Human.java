@@ -1,11 +1,16 @@
 package ua.kiev.prog;
 
+import java.util.logging.Logger;
+
 public class Human {
+	
+	private static Logger logger = Logger.getLogger(Main.class.getName());
+	
 	protected int growth;
 	protected int weight;
 	protected int age;
-	private String name;
-	private String surname;
+	protected String name;
+	protected String surname;
 	
 	public Human(String name, String surname, int growth, int weight, int age) {
 		super();
@@ -60,8 +65,8 @@ public class Human {
 		this.age = age;
 	}
 	
-	public void  HumanInfo(String inf) {
-		System.out.println(surname + " " + name + " " + " имеет рост - " + growth + " ,вес - " + weight + " и возраст- " + age);
+	public void  humanInfo(String inf) {
+		logger.info(surname + " " + name + " " + " имеет рост - " + growth + " ,вес - " + weight + " и возраст- " + age);
 	}
 
 	@Override

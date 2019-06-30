@@ -25,7 +25,7 @@ public class GroupStudents {
 		this.students = students;
 	}
 	
-	public Student[] insertStudentInGroup(Student student) throws MyException {
+	public Student insertStudentInGroup(Student student) {
 		int countNull = 0;
 		for (int i = 0; i < students.length; i++) {
 			if (students[i] == null) {
@@ -39,29 +39,31 @@ public class GroupStudents {
 				throw new MyException();
 			}
 		} catch (MyException e) {
-			logger.info("Exception: Complite group  \n" + " The group already has " + students.length + " students \n");
+			logger.info(e + "Exception: Complite group  \n" + " The group already has " + students.length + " students \n");
 		}
-		return students;
+		return student;
 	}
 
-	public Student[] getStudentoOfGroup(Student student) {
+	public Student getStudentoOfGroup(Student student) {
 		for (int i = 0; i < students.length; i++) {
-			if (students[i] == student) {
+			if (students[i].equals(student)) {
 				students[i] = null;
 				break;
 			}
 		}
-		return students;
+		return student;
 	}
 
-	public String finedStudentInGroup(String surname) {
+	
+	
+	public Student finedStudentInGroup(Student surname) {
 		for (int i = 0; i < students.length; i++) {
 			if (students[i] != null && students[i].getSurname().equals(surname)) {
 				i++;
-				return "Student " + surname + " number: " + i;
+				return surname;
 			}
 		}
-		return "Student " + surname + " no found";
+		return surname;
 	}
 
 	@Override
@@ -82,7 +84,7 @@ public class GroupStudents {
 				}
 			}
 		}
-		return "Group [" + Arrays.toString(students) + "]";
+		return Arrays.toString(students);
 	}
 	
 	

@@ -1,6 +1,10 @@
 package ua.kiev.prog;
 
+import java.util.logging.Logger;
+
 public class Student extends Human {
+	
+	private static Logger logger = Logger.getLogger(Student.class.getName());
 	
 	private String faculty;
 	private int course;
@@ -38,8 +42,15 @@ public class Student extends Human {
 
 
 	@ Override
-	public void  HumanInfo(String inf) {
-		super.HumanInfo (inf);
-		System.out.println("Человек имеет рост - " + growth + " ,вес - " + weight + " и возраст- " + age);
+	public void  humanInfo(String inf) {
+		super.humanInfo (inf);
+		logger.info("Человек имеет рост - " + growth + " ,вес - " + weight + " и возраст- " + age);
 	}
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+	
 }

@@ -23,78 +23,32 @@ public class Main {
 		
 		//Добавление студентов
 		GroupStudents grup = new GroupStudents();
-		try {
-			grup.insertStudentInGroup(student1);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student2);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student3);
-		} catch (MyException e1) {
-			e1.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student4);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student5);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student6);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student7);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student8);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student9);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student10);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
-		try {
-			grup.insertStudentInGroup(student11);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
+		grup.insertStudentInGroup(student1);
+		grup.insertStudentInGroup(student2);
+		grup.insertStudentInGroup(student3);
+		grup.insertStudentInGroup(student4);
+		grup.insertStudentInGroup(student5);
+		grup.insertStudentInGroup(student6);
+		grup.insertStudentInGroup(student7);
+		grup.insertStudentInGroup(student8);
+		grup.insertStudentInGroup(student9);
+		grup.insertStudentInGroup(student10);
+		grup.insertStudentInGroup(student11);
 		logger.info("The group is already full: \n" + grup + "\n");
 		
 		//Удаление студентов
-		grup.getStudentoOfGroup(student5);
-		grup.getStudentoOfGroup(student3);
+		grup.getStudentoOfGroup(student1);
+	
+		
+		
 		logger.info("Now we have 8 students: "+ grup + "\n");
 		
-		try {
-			grup.insertStudentInGroup(student11);
-		} catch (MyException e) {
-			e.printStackTrace();
-		}
+		grup.insertStudentInGroup(student11);
 		logger.info("Now we have 9 students: "+ grup + "\n");
 		
-		logger.info(grup.finedStudentInGroup("Chikrizhov"));
-		logger.info(grup.finedStudentInGroup("Petrova"));
-		logger.info(grup.finedStudentInGroup("Ivanov"));
+		logger.info(grup.finedStudentInGroup(student1) + "!");
+		logger.info(grup.finedStudentInGroup(student5)+ "!");
+		logger.info(grup.finedStudentInGroup(student4)+ "!");
 	}
 
 }
